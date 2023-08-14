@@ -110,7 +110,7 @@ def option5():   #display order details of a customer
     try:
         row = {}
         a = (input("Enter ID of Customer: "))
-        query = "SELECT * FROM Orders where Cust_ID = %s " % (a)   ##if time make better 
+        query = "SELECT * FROM Orders where Cust_ID = %s " % (a)  
         cursor.execute(query)
         data = cursor.fetchall()
         for row in data:
@@ -128,7 +128,7 @@ def option8():   #display order details of a customer
     try:
         row = {}
         a = int((input("Enter ID of delivery personnel: ")))
-        query = "SELECT * FROM delivery_staff where ID = %s " % (a)   ##if time make better
+        query = "SELECT * FROM delivery_staff where ID = %s " % (a)  
         cursor.execute(query)
         data = cursor.fetchall()
         mydb.commit()
@@ -151,7 +151,7 @@ def option7():   #display order details of a customer
     try:
         row = {}
         a = (input("Enter ID of Customer: "))
-        query = "SELECT * FROM items where order_ID in (select order_ID from Orders where Cust_ID = %s )" % (a)   ##if time make better 
+        query = "SELECT * FROM items where order_ID in (select order_ID from Orders where Cust_ID = %s )" % (a)  
         cursor.execute(query)
         data = cursor.fetchall()
         for row in data:
@@ -216,9 +216,9 @@ while(1):
                 print("3. Make a Reservation")  # insert
                 print("4. Cancel order")  # delete
                 print("5. Display Order details for a particular customer") #display
-                print("6. List free delivery personnel")
-                print("7. Look for past order items")
-                print("8. fire a delivery personnel")
+                print("6. List free delivery personnel") #display
+                print("7. Look for past order items")    #display
+                print("8. Fire a delivery personnel")   #delete
                 print("9. Logout")
                 ch = int(input("Enter choice> "))
                 if ch == 9:
